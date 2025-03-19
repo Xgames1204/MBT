@@ -1,0 +1,227 @@
+:root {
+    --dark-bg: #0a0a0a;
+    --dark-text: #ffffff;
+    --accent: #00ff88;
+    --dark-card: #2d2d2d;
+    --gradient: linear-gradient(135deg, #1f1f1f 0%, #3a3a3a 100%);
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+    padding-top: 100px; 
+    border-radius: 30px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+  
+
+.top-banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(25, 25, 25, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+.top-banner .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Выравнивание кнопки вправо */
+.nav-links {
+    margin-left: auto;
+}
+.logo {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.block1 {
+    background: var(--gradient);
+    border: 1px solid #3d3d3d;
+    max-width: 1200px;
+    padding: 50px;
+    margin: 80px auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.block1 img {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.text-content h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #00ff88 0%, #00ccff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.block2-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+.block2 {
+    background: var(--gradient);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.block1:hover {
+    transform: translateY(-10px);
+}
+
+.block2 img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 0;
+    list-style: none;
+}
+
+.features-list li {
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.05);
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+}
+
+.color-block {
+    background: var(--gradient);
+    position: relative;
+    overflow: hidden;
+}
+
+.color-block::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0,255,136,0.1), transparent);
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+.color-block:hover::after {
+    animation: glow 1.5s infinite;
+}
+
+@keyframes glow {
+    0% {left: -50%}
+    100% {left: 150%}
+}
+
+.final-block {
+    text-align: center;
+    padding: 100px 0;
+    background: rgba(0,0,0,0.3);
+    margin: 100px 0;
+}
+.small-block {
+    text-align: center;
+    padding: 100px 0;
+    background: rgba(0,0,0,0.3);
+    margin: 10px 0;
+    border-radius: 30px;
+}
+.small-text {
+    font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    .block1, .block2-container {
+        margin: 40px 20px;
+        padding: 30px;
+    }
+    
+    .text-content h1 {
+        font-size: 2rem;
+    }
+}
+.color-blocks {
+    display: flex;
+    gap: 20px;
+    margin: 50px auto;
+    max-width: 1200px;
+    align-items: stretch;
+    border-radius: 10px; /* Выравнивание по высоте */
+}
+
+.color-block {
+    flex: 1;
+    min-height: 100px; /* Фиксированная высота */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    text-align: center;
+}
+.buy-button {
+    background: linear-gradient(135deg, #00ff88 0%, #00ccff 100%);
+    color: #1a1a1a;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,255,136,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,255,136,0.5);
+}
+.price1 {
+    color: #00ff00;
+}
+.price2 {
+    color: #003cff;
+}
+.price3 {
+    color: #ff0000;
+}
+.byx {
+    color: #ffffffc0;
+    font-size: 15px;
+}
+.banner {
+    text-align: center;
+    
+    
+}
+.price {
+    background: linear-gradient(45deg, #00ff88 0%, #00ccff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+}
