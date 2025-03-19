@@ -195,6 +195,7 @@ body {
     box-shadow: 0 4px 15px rgba(0,255,136,0.3);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease !important;
 }
 
 .buy-button:hover {
@@ -224,4 +225,22 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2.5rem;
+}
+/* Добавить в style.css */
+
+
+img {
+    transition: transform 0.3s ease;
+}
+
+.light-theme .color-block {
+    border: 1px solid #ddd;
+}
+
+.light-theme .features-list li {
+    background: rgba(0,0,0,0.05);
+}
+[data-element-id] {
+    transition: all 0.3s ease;
+    position: relative;
 }
