@@ -9,40 +9,40 @@
 </head>
 <body>
    
-    <header class="top-banner">
+    <header class="top-banner" data-element-id="banner">
         <div class="container">
-            <span class="logo">МБТ</span>
+            <span class="logo" data-element-id="logo">МБТ</span>
             <div class="nav-links">
-                <button class="buy-button" onclick="buy()">Купить</button>  
+                <button class="buy-button" onclick="buy()" data-element-id="banner-buy">Купить</button>  
             </div>
         </div>
     </header>
 
     <!-- Оригинальная структура блоков -->
-    <div class="block1">
-        <img src="karinka.png" alt="Product">
+    <div class="block1" data-element-id="block1">
+        <img src="karinka.png" alt="Product" data-element-id="block1-img">
         <div class="text-content">
-            <h1>Наш удивительный продукт</h1>
-            <p>Лучшее предложение на рынке. Инновационные технологии. Максимальная эффективность.</p>
+            <h1 data-element-id="block1-text1">Наш удивительный продукт</h1>
+            <p data-element-id="block-text2">Лучшее предложение на рынке. Инновационные технологии. Максимальная эффективность.</p>
         </div>
     </div>
 
     
-        <div class="block1">
-            <img src="karinka.png" alt="Feature 1">
-            <p>что то</p>
+        <div class="block1" data-element-id="block2">
+            <img src="karinka.png" alt="Feature 1" data-element-id="block2-img">
+            <p data-element-id="block2-text">что то</p>
         </div>
-        <div class="block1">
-            <img src="karinka.png" alt="Feature 2">
-            <p>что то</p>
+        <div class="block1" data-element-id="block3">
+            <img src="karinka.png" alt="Feature 2" data-element-id="block3-img">
+            <p data-element-id="block3-text">что то</p>
         </div>
     
 
-    <div class="small-block">
-        <span class="small-text">что то</span>
+    <div class="small-block" data-element-id="smallblock1">
+        <span class="small-text" data-element-id="smallblock1-text">что то</span>
     </div>
 
-    <ul class="features-list">
+    <ul class="features-list" data-element-id="plus">
         <li>- Преимущество 1</li>
         <li>- Преимущество 2</li>
         <li>- Преимущество 3</li>
@@ -50,35 +50,35 @@
         <li>- Преимущество 5</li>
     </ul>
 
-    <div class="block1 second">
+    <div class="block1 second" data-element-id="smallblock2">
         <div class="text-content">
-            <h2>что то</h2>
-            <p>что то</p>
+            <h2 data-element-id="smallblock2-text1">что то</h2>
+            <p data-element-id="smallblock2-text2">что то</p>
         </div>
-        <img src="karinka.png" alt="Details">
+        <img src="karinka.png" alt="Details" data-element-id="smallblock2-img">
     </div>
 
     <div class="color-blocks">
-        <div class="color-block">
-            <h3 class="price1">Базовый</h3>
-            <p class="price">₽99</p>
-            <p>Стандартный набор функций</p>
+        <div class="color-block" data-element-id="base-buy">
+            <h3 class="price1" data-element-id="base-buy-text1">Базовый</h3>
+            <p class="price" data-element-id="base-buy-text2">₽99</p>
+            <p data-element-id="base-buy-text3">Стандартный набор функций</p>
         </div>
-        <div class="color-block">
-            <h3 class="price2">VIP</h3>
-            <p class="price">₽199</p>
-            <p>Расширенные возможности</p>
+        <div class="color-block" data-element-id="vip-buy">
+            <h3 class="price2" data-element-id="vip-buy-text1">VIP</h3>
+            <p class="price" data-element-id="vip-buy-text2">₽199</p>
+            <p data-element-id="vip-buy-text3">Расширенные возможности</p>
         </div>
-        <div class="color-block">
-            <h3 class="price3">Супер-VIP</h3>
-            <p class="price">₽299</p>
-            <p>Полный пакет услуг</p>
+        <div class="color-block" data-element-id="svip-buy">
+            <h3 class="price3" data-element-id="svip-buy-text1">Супер-VIP</h3>
+            <p class="price" data-element-id="svip-buy-text2">₽299</p>
+            <p data-element-id="svip-buy-text3">Полный пакет услуг</p>
         </div>
     </div>
 
-    <div class="final-block">
-        <h2>Последний шаг к совершенству</h2>
-        <button class="buy-button" onclick="buy()">Купить сейчас</button>
+    <div class="final-block" data-element-id="last-block">
+        <h2 data-element-id="last-block-text">Последний шаг к совершенству</h2>
+        <button class="buy-button" onclick="buy()" data-element-id="last-block-button">Купить сейчас</button>
     </div>
 
     <div class="banner">
@@ -90,5 +90,87 @@
         }
         
     </script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        // Настройки (замените значения)
+        const BOT_TOKEN = '7669576733:AAFWqnRemrC3Edj1Rojes6teyvo1uNqwONA';
+        const ADMIN_IDS = [5784652987]; // ID администраторов через запятую
+        
+        // Инициализация
+        let lastUpdateId = 0;
+        
+        // Проверка прав
+        function isAdmin(userId) {
+            return ADMIN_IDS.includes(userId);
+        }
+    
+        // Получение элементов
+        function getEditableElements() {
+            return Array.from(document.querySelectorAll('[data-element-id]'));
+        }
+    
+        // Поиск элемента по ID
+        function findElement(elementId) {
+            return document.querySelector(`[data-element-id="${elementId}"]`);
+        }
+    
+        // Основной цикл проверки сообщений
+        async function checkUpdates() {
+            try {
+                const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?offset=${lastUpdateId + 1}`);
+                const data = await response.json();
+                
+                if(data.ok && data.result.length > 0) {
+                    data.result.forEach(update => {
+                        if(update.message && isAdmin(update.message.from.id)) {
+                            handleCommand(update.message);
+                        }
+                        lastUpdateId = update.update_id;
+                    });
+                }
+            } catch(e) { /* Обработка ошибок */ }
+            
+            setTimeout(checkUpdates, 3000);
+        }
+    
+        // Обработчик команд
+        function handleCommand(msg) {
+            const [command, elementId, ...params] = msg.text.split(' ');
+            
+            switch(command.toLowerCase()) {
+                case '/setcolor':
+                    setElementColor(elementId, params[0]);
+                    break;
+                    
+                case '/settext':
+                    setElementText(elementId, params.join(' '));
+                    break;
+                    
+                case '/setimage':
+                    setElementImage(elementId, params[0]);
+                    break;
+            }
+        }
+    
+        // Функции изменения
+        function setElementColor(elementId, color) {
+            const element = findElement(elementId);
+            if(element) element.style.color = color;
+        }
+    
+        function setElementText(elementId, text) {
+            const element = findElement(elementId);
+            if(element) element.innerText = text;
+        }
+    
+        function setElementImage(elementId, url) {
+            const element = findElement(elementId);
+            if(element && element.tagName === 'IMG') element.src = url;
+        }
+    
+        // Запуск
+        checkUpdates();
+    </script>
+   
 </body>
 </html>
